@@ -1,0 +1,13 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    ports:
+      - 5432:5432
+    volumes:
+      - sample_db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=ChangeMe
+      - POSTGRES_USER=myuser
+      - POSTGRES_DB=api
+volumes:
+  sample_db: {}
